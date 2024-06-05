@@ -1,0 +1,1 @@
+{"bedside_message": "<case4_types.BedSideMessageDef object at 0x102a6b450>", "bedside_float": "<case4_types.BedSideFloat object at 0x102af4050>", "extracted_values": [["HR", 25600], ["MNIBP", 24576], ["SYSIBP", -32768], ["DIAIBP", 16384]]}
