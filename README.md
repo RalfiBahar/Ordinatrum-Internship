@@ -39,3 +39,87 @@ Tracking (and saving) my progress throughout my summer internship...
     - `UCOUNT` corresponds to unsigned 16-bit words.
 
 ---
+
+# Monitoring Prometheus Prototype Setup
+
+Setting up a prototype for monitoring using Prometheus, Grafana, and related tools.
+
+---
+
+- **Repository Structure**
+
+/repo
+
+    /monitoring-prom-example
+
+    	docker-compose.yaml
+
+    	grok_exporter.yml
+
+    	cpu_stress_test.py
+
+    	app.log
+
+    	/dashboards
+
+    		dashboard1.json
+
+    		dashboard2.json
+
+    	/config
+
+    		prometheus.yaml
+
+    		telegraf.conf
+
+- **Instructions**
+
+- **Ensure Docker is Installed**
+  Make sure Docker is installed in your environment. You can download and install Docker from [Docker's official website](https://www.docker.com/get-started).
+
+- **Clone the Repository**
+
+  ```sh
+  git clone https://github.com/RalfiBahar/Ordinatrum-Internship
+  cd monitoring-prom-example
+  ```
+
+- **Modify Configurations (if needed)**
+
+  - Change configurations within `/config/prometheus.yaml` if needed.
+  - Change environment variables for Grafana within `docker-compose.yaml` if needed.
+
+- **Start the Containers**
+
+  ```sh
+  sudo docker compose up -d
+  ```
+
+- **Check Container Status**
+
+  ```sh
+  docker ps
+  ```
+
+  Ensure all containers are in the 'started' mode.
+
+- **Access Prometheus**
+  Go to [http://localhost:9090](http://localhost:9090) to check if Prometheus is running.
+
+- **Access Grafana Dashboard**
+  - Go to [http://localhost:3000](http://localhost:3000).
+  - Navigate to **Dashboards** → **New** → **Import**.
+  - Import or paste the `.json` files from the `/dashboards` directory in the repository.
+
+---
+
+- **Files in the Repository**
+
+- **docker-compose.yaml**: Docker Compose configuration to set up the entire monitoring stack.
+- **grok_exporter.yml**: Configuration for Grok Exporter.
+- **cpu_stress_test.py**: A script to simulate CPU load for testing purposes.
+- **app.log**: Example log file for testing Grok Exporter.
+- **/dashboards/dashboard1.json**: Grafana dashboard configuration file.
+- **/dashboards/dashboard2.json**: Grafana dashboard configuration file.
+- **/config/prometheus.yaml**: Prometheus configuration file.
+- **/config/telegraf.conf**: Telegraf configuration file.
